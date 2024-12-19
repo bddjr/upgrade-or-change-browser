@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Upgrade or change browser</title>
+	<link rel="icon" href="data:">
+	<style>
+		html {
+			background-color: #EDF2FA;
+		}
+
+		body {
+			margin: 32px auto;
+			text-align: center;
+		}
+
+		.title {
+			font-size: 32px;
+		}
+
+		.browsers {
+			margin: 32px 0;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.browserA {
+			color: #0069c2;
+			background-color: white;
+			text-decoration: none;
+			display: inline-block;
+			cursor: pointer;
+			width: 128px;
+			padding: 16px 0;
+			margin: 6px;
+			border-radius: 16px;
+			box-shadow: 0 0 3px gray;
+			transition-duration: 0.2s;
+		}
+
+		.browserA:hover {
+			box-shadow: 0 0 12px gray;
+		}
+
+		img {
+			border-width: 0;
+			width: 40px;
+			height: 40px;
+			display: block;
+			margin: 0 auto;
+		}
+
+		.browserspantitle {
+			font-size: 18px;
+			line-height: 22px;
+			height: 22px;
+			cursor: pointer;
+			display: block;
+			margin-top: 12px;
+		}
+
+		.footer {
+			color: #808080;
+			font-size: 14px;
+		}
+	</style>
+</head>
+
+<body>
+	<p id="pTitle" class="title">Upgrade or change browser</p>
+	<div class="browsers">
+		<a id="aChrome" class="browserA" target="_blank" rel="noopener noreferrer" href="https://www.google.cn/chrome/">
+			<img src="icon/chrome.png">
+			<span class="browserspantitle">Chrome</span>
+		</a>
+		<a id="aEdge" class="browserA" target="_blank" rel="noopener noreferrer"
+			href="https://www.microsoft.com/edge/download">
+			<img src="icon/edge.png">
+			<span class="browserspantitle">Edge</span>
+		</a>
+		<a id="aSupermium" class="browserA" target="_blank" rel="noopener noreferrer"
+			href="http://win32subsystem.live/supermium/">
+			<img src="icon/supermium.png">
+			<span class="browserspantitle">Supermium</span>
+		</a>
+		<a id="aFirefox" class="browserA" target="_blank" rel="noopener noreferrer"
+			href="https://www.mozilla.org/firefox/new/">
+			<img src="icon/firefox.png">
+			<span class="browserspantitle">Firefox</span>
+		</a>
+	</div>
+
+	<a class="footer" target="_blank" rel="noopener noreferrer"
+		href="https://github.com/bddjr/upgrade-or-change-browser">&copy; 2024 bddjr</a>
+
+	<script>
+		var navLang = navigator.language || navigator.browserLanguage
+		if (/^zh/i.test(navLang)) {
+			pTitle.innerText = "升级或更换浏览器"
+		} else {
+			aChrome.href = "https://www.google.com/chrome/"
+		}
+		if (!/MSIE/.test(navigator.userAgent)) {
+			aSupermium.href = "https://win32subsystem.live/supermium/"
+		}
+	</script>
+</body>
