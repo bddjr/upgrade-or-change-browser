@@ -71,7 +71,8 @@
 <body>
 	<p id="pTitle" class="title">Upgrade or change browser</p>
 	<div class="browsers">
-		<a id="aChrome" class="browserA" target="_blank" rel="noopener noreferrer" href="https://www.google.cn/chrome/">
+		<a id="aChrome" class="browserA" target="_blank" rel="noopener noreferrer"
+			href="https://www.google.cn/chrome/fallback/">
 			<img src="icon/chrome.png">
 			<span class="browserspantitle">Chrome</span>
 		</a>
@@ -100,10 +101,13 @@
 		if (/^zh/i.test(navLang)) {
 			pTitle.innerText = "升级或更换浏览器"
 		} else {
-			aChrome.href = "https://www.google.com/chrome/"
+			aChrome.href = aChrome.href.replace(".cn", ".com")
 		}
 		if (!/MSIE/.test(navigator.userAgent)) {
-			aSupermium.href = "https://win32subsystem.live/supermium/"
+			aSupermium.href = aSupermium.href.replace("http:", "https:")
+		}
+		if ("".replaceAll) {
+			aChrome.href = aChrome.href.replace("fallback/", "")
 		}
 	</script>
 </body>
