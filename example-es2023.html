@@ -5,7 +5,7 @@
 	<script>
 		(function () { try { return eval("[].with") } catch (e) { } })()
 			|| confirm(
-				/^zh/.test(navigator.language || navigator.userLanguage)
+				/^zh/i.test(navigator.language || navigator.userLanguage)
 					? "您的浏览器太旧了。\n升级或更换浏览器？"
 					: "Your browser is too old.\nUpgrade or change browser?"
 			) && location.assign("https://bddjr.github.io/upgrade-or-change-browser/")

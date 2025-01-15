@@ -106,7 +106,7 @@
 		if (!/MSIE/.test(navigator.userAgent)) {
 			aSupermium.href = aSupermium.href.replace("http:", "https:")
 		}
-		if ("".replaceAll) {
+		if ("".replaceAll || /Mobi/.test(navigator.userAgent)) {
 			aChrome.href = aChrome.href.replace("fallback/", "")
 		}
 	</script>
